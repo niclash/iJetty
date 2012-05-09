@@ -29,7 +29,6 @@
 		<jetty.version>7.6.0.RC4</jetty.version>
 		<servlet.version>2.5-20081211</servlet.version>
 
-		<android.sdk.path>/home/patrick/dev/external/android-sdk-linux</android.sdk.path>
 		<android.sdk.version>10</android.sdk.version>
 		<android.platform>platforms/android-${android.sdk.version}</android.platform>
 
@@ -40,6 +39,24 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>maven-properties-plugin</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <executions>
+                      <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                          <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                          <files>
+                            <file>dev.properties</file>
+                          </files>
+                        </configuration>
+                      </execution>
+                    </executions>
+                </plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
