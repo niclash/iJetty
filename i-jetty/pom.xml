@@ -39,24 +39,6 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>maven-properties-plugin</artifactId>
-                    <version>1.0-SNAPSHOT</version>
-                    <executions>
-                      <execution>
-                        <phase>initialize</phase>
-                        <goals>
-                          <goal>read-project-properties</goal>
-                        </goals>
-                        <configuration>
-                          <files>
-                            <file>dev.properties</file>
-                          </files>
-                        </configuration>
-                      </execution>
-                    </executions>
-                </plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -75,18 +57,5 @@
 			<id>mvn-ext-libs</id>
 			<url>http://mvn-repo.googlecode.com/svn/repository</url>
 		</repository>
-
-		<!--<repository>-->
-			<!--<id>oss-jetty-snapshots</id>-->
-			<!--<url>http://oss.sonatype.org/content/repositories/jetty-snapshots</url>-->
-			<!--<name>Jetty Snapshots</name>-->
-			<!--<releases>-->
-				<!--<enabled>false</enabled>-->
-			<!--</releases>-->
-			<!--<snapshots>-->
-				<!--<enabled>true</enabled>-->
-			<!--</snapshots>-->
-		<!--</repository>-->
-	</repositories>
-
+    </repositories>
 </project>
