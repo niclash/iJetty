@@ -23,7 +23,7 @@
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
-          <verbose>false</verbose>
+          <verbose>true</verbose>
         </configuration>
       </plugin>
 

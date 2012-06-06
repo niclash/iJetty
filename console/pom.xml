@@ -31,7 +31,7 @@
 		<jetty.version>7.6.0.RC4</jetty.version>
 		<servlet.version>2.5-20081211</servlet.version>
 
-		<android.sdk.path>/home/patrick/dev/external/android-sdk-linux</android.sdk.path>
+        <android.sdk.path>${env.ANDROID_HOME}</android.sdk.path>
 		<android.sdk.version>10</android.sdk.version>
 		<android.platform>platforms/android-${android.sdk.version}</android.platform>
 	</properties>
