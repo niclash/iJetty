@@ -26,15 +26,18 @@
 		<maven.android.plugin.version>3.1.1</maven.android.plugin.version>
 
 		<android.version>2.1.2</android.version>
-		<jetty.version>7.6.0.RC4</jetty.version>
-		<servlet.version>2.5-20081211</servlet.version>
+		<jetty.version>8.1.4.v20120524</jetty.version>
+		<servlet.version>3.0.20100224</servlet.version>
 
         <android.sdk.path>${env.ANDROID_HOME}</android.sdk.path>
         <android.sdk.version>10</android.sdk.version>
 		<android.platform>platforms/android-${android.sdk.version}</android.platform>
 
 		<org.slf4j.version>1.6.1</org.slf4j.version>
-		<ch.qos.logback.android.version>1.0.0-4</ch.qos.logback.android.version>
+        <ch.qos.logback.android.version>1.0.0-4</ch.qos.logback.android.version>
+
+        <!-- copy libs locally so ide can reference them -->
+        <project.libs.dir>${basedir}/libs</project.libs.dir>
 	</properties>
 
 	<build>
@@ -48,21 +51,23 @@
 						<source>${maven.compiler.source}</source>
 						<target>${maven.compiler.target}</target>
 					</configuration>
-				</plugin>
-                    <plugin>
-                        <artifactId>maven-dependency-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <phase>install</phase>
-                                    <goals>
-                                        <goal>copy-dependencies</goal>
-                                    </goals>
-                                    <configuration>
-                                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                                    </configuration>
-                                </execution>
-                            </executions>
-                    </plugin>
+                </plugin>
+
+                <!-- copy libs locally so ide can reference them -->
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>process-sources</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.libs.dir}</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>

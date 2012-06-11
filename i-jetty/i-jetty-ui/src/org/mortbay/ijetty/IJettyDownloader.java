@@ -14,18 +14,6 @@
 
 package org.mortbay.ijetty;
 
-import static org.mortbay.ijetty.common.LogSupport.TAG;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-
-import org.eclipse.jetty.io.Buffer;
-import org.eclipse.jetty.http.HttpStatus;
-import org.eclipse.jetty.client.ContentExchange;
-import org.eclipse.jetty.client.HttpClient;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -41,6 +29,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import org.eclipse.jetty.client.ContentExchange;
+import org.eclipse.jetty.client.HttpClient;
+import org.eclipse.jetty.http.HttpStatus;
+import org.eclipse.jetty.io.Buffer;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+import static org.mortbay.ijetty.common.LogSupport.TAG;
 
 /**
  * IJettyDownloader

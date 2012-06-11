@@ -1,10 +1,10 @@
 package org.mortbay.ijetty.common;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class BaseActivity extends Activity
 {
@@ -19,12 +19,12 @@ public class BaseActivity extends Activity
         Log.i( getClass().getSimpleName(), "onDestroy(" + getId() + ')' );
     }
 
-    @Override
-    public void onDetachedFromWindow()
-    {
-        super.onDetachedFromWindow();
-        Log.i( getClass().getSimpleName(), "onDetachedFromWindow(" + getId() + ')' );
-    }
+//    @Override
+//    public void onDetachedFromWindow()
+//    {
+//        super.onDetachedFromWindow();
+//        Log.i( getClass().getSimpleName(), "onDetachedFromWindow(" + getId() + ')' );
+//    }
 
     @Override
     protected void onNewIntent( Intent intent )

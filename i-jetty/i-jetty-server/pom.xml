@@ -35,6 +35,18 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-client</artifactId>
+			<version>${jetty.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-websocket</artifactId>
+			<version>${jetty.version}</version>
+        </dependency>
+
+		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
 			<version>${android.version}</version>
@@ -69,12 +81,12 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                     <executions>
                         <execution>
-                            <phase>install</phase>
+                            <phase>process-sources</phase>
                             <goals>
                                 <goal>copy-dependencies</goal>
                             </goals>
                             <configuration>
-                                <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                                        <outputDirectory>${project.libs.dir}</outputDirectory>
                             </configuration>
                         </execution>
                     </executions>

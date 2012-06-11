@@ -8,3 +8,6 @@ target
 *.diff
 *.iml
 i-jetty/dev.properties
+i-jetty/i-jetty-ui/gen/*
+i-jetty/i-jetty-server/gen/*
+i-jetty/i-jetty-server/libs/*
